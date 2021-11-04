@@ -20,6 +20,7 @@ while loop == TRUE:
     win.setCoords(-taille/2,-taille/2,taille/2,taille/2)
     radius = taille/2 - 50
     cercle = Circle(Point(0,0), radius)
+    cercle.setOutline(color_2)
     cercle.draw(win)
     ##draw lines
     for i in range(num):
