@@ -13,7 +13,6 @@ while loop == TRUE:
     color_1 = input('which color background?')
     color_2 = input('which color lines?')
 
-
     ##represent window and circle
     win = GraphWin('Times Tables Representation', 700, 700)
     win.setBackground(color_1)
