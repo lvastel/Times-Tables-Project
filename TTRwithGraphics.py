@@ -1,28 +1,41 @@
 import math
+from tkinter.constants import TRUE
 from graphics import *
 from math import*
 
-##basic settings and questions
-x = int(input('how many numbers?'))
-z = int(input('what times table?'))
-##represent window
-
-win = GraphWin('Times Tables Representation', 800, 800)
-win.setBackground('blue')
-win.setCoords(-400,-400,400,400)
-e = Circle(Point(0,0), 300)
-e.draw(win)
-for i in range(x):
-    w = z * i
-    a = 300*(math.sin((pi/180)*(i*(360/x)+90)))
-    b = 300*(math.cos((pi/180)*(i*(360/x)+90)))
-    c = 300*(math.sin((pi/180)*(w*(360/x)+90)))
-    d = 300*(math.cos((pi/180)*(w*(360/x)+90)))
-    l = Line(Point(a,b),Point(c,d))
-    l.draw(win)
-    
+##loop
+loop = 1
+while loop == TRUE:
+    ##basic settings and questions
+    num = int(input('how many numbers?'))
+    TT = int(input('what times table?'))
+    ##color choice
+    color_1 = input('which color background?')
+    color_2 = input('which color lines?')
 
 
-win.getMouse()
-win.close()
+    ##represent window and circle
+    win = GraphWin('Times Tables Representation', 700, 700)
+    win.setBackground(color_1)
+    win.setCoords(-350,-350,350,350)
+    cercle = Circle(Point(0,0), 300)
+    cercle.draw(win)
+    ##draw lines
+    for i in range(num):
+        w = TT * i
+        P1x = 300*(math.sin((pi/180)*(i*(360/num)+90)))
+        P1y = 300*(math.cos((pi/180)*(i*(360/num)+90)))
+        P2x = 300*(math.sin((pi/180)*(w*(360/num)+90)))
+        P2y = 300*(math.cos((pi/180)*(w*(360/num)+90)))
+        ligne = Line(Point(P1x,P1y),Point(P2x,P2y))
+        ligne.setOutline(color_2)
+        ligne.draw(win)
+        
+    win.getMouse()
+    win.close()
+    again = input('represent another time table?')
+    if again == 'n':
+        loop += 1
+
+
 
