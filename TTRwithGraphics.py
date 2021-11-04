@@ -14,7 +14,7 @@ while loop == TRUE:
     color_2 = input('which color lines?')
 
     ##represent window and circle
-    win = GraphWin('Times Tables Representation', 700, 700)
+    win = GraphWin('Times Tables Representation', 700, 700, autoflush=FALSE)
     win.setBackground(color_1)
     win.setCoords(-350,-350,350,350)
     cercle = Circle(Point(0,0), 300)
